@@ -12,15 +12,15 @@ export interface IPoWConfig extends IBaseModuleConfig {
   powCryptoNightParams: IPoWCryptoNightParams; // cryptonight parameters
   powArgon2Params: IPoWArgon2Params; // argon2 parameters
   powDifficulty: number; // number of 0-bits the scrypt hash needs to start with to be egliable for a reward
-  powNonceCount: number; // number of scrypt hashs to pack into a share (should be low as that just increases verification load on server side)
+  powNonceCount: number; // number of scrypt hashes to pack into a share (should be low as that just increases verification load on server side)
   powHashrateSoftLimit: number; // maximum allowed mining hashrate (will be throttled to this rate when faster)
-  powHashrateHardLimit: number; // maximum allowed mining hashrate (reject shares with nonces that exceet the limit)
+  powHashrateHardLimit: number; // maximum allowed mining hashrate (reject shares with nonces that exceed the limit)
 
   /* PoW-share verification
   Proof of Work shares need to be verified to prevent malicious users from just sending in random numbers.
   As that can lead to a huge verification work load on the server, this faucet can redistribute shares back to other miners for verification.
   These randomly selected miners need to check the share and return its validity to the server within 10 seconds or they're penalized.
-  If theres a missmatch in validity-result the share is checked again locally and miners returning a bad verification result are slashed.
+  If there is a mismatch in validity-result the share is checked again locally and miners returning a bad verification result are slashed.
   Bad shares always result in a slashing (termination of session and loss of all collected mining balance)
   */
   verifyLocalPercent: number; // percentage of shares validated locally (0 - 100)

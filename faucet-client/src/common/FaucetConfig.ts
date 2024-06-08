@@ -1,3 +1,4 @@
+import { PoWHashAlgo } from "../types/PoWMinerSrc";
 
 export interface IFaucetConfig {
   faucetTitle: string;
@@ -74,12 +75,6 @@ export interface IPoWModuleConfig {
   powHashrateLimit: number;
 }
 
-export enum PoWHashAlgo {
-  SCRYPT      = "scrypt",
-  CRYPTONIGHT = "cryptonight",
-  ARGON2      = "argon2",
-}
-
 export type PoWParams = {
   a: PoWHashAlgo.SCRYPT,
   n: number; // cpu and memory cost
@@ -106,6 +101,8 @@ export interface IPassportModuleConfig {
   manualVerification: boolean;
   stampScoring: {[stamp: string]: number};
   boostFactor: {[score: number]: number};
+  overrideScores: [number, number, number];
+  guestRefresh: number | boolean;
 }
 
 
