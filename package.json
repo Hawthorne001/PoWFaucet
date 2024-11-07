@@ -74,7 +74,7 @@
     "randombytes": "^2.1.0",
     "tiny-typed-emitter": "^2.1.0",
     "uuid": "^9.0.1",
-    "web3": "^4.5.0",
+    "web3": "^4.15.0",
     "web3-eth-ens": "^4.0.8",
     "web3-providers-ipc": "^4.0.7",
     "ws": "^8.16.0",
